@@ -1,0 +1,19 @@
+### node ###
+*/node_modules/
+
+### 编译结果文件和日志文件 ###
+*/logs
+*.log*
+
+### SVN文件 ###
+.svn
+
+# Coverage directory used by tools like istanbul
+coverage
+
+# nyc test coverage
+*/.nyc_output
+
+### GIT文件 ###
+#.gitignore
+ 

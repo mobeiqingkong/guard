@@ -1,0 +1,66 @@
+{
+  "name": "guard_api",
+  "description": "安全卫士guard-api",
+  "author": "mobius24",
+  "private": true,
+  "scripts": {
+    "api": "cross-env NODE_ENV=development ./node_modules/.bin/nodemon ./config/run.js",
+    "parking": "./node_modules/.bin/nodemon ./src/parking/config/run",
+    "api-prod": "cross-env NODE_ENV=production ./node_modules/.bin/nodemon ./config/run",
+    "unit": "cross-env NODE_ENV=test nyc --reporter=lcov --reporter=text mocha",
+    "nyc": "cross-env NODE_ENV=test nyc mocha --recursive"
+  },
+  "dependencies": {
+    "file-saver": "^1.3.3",
+    "koa": "^2.5.0",
+    "koa-body": "^2.5.0",
+    "koa-jwt": "^3.3.1",
+    "koa-router": "^7.4.0",
+    "koa-session": "^5.9.0",
+    "log4js": "^2.10.0",
+    "md5": "^2.2.1",
+    "merge-descriptors": "^1.0.1",
+    "moment": "^2.22.1",
+    "node-schedule": "^1.3.0",
+    "nodemon": "^1.17.3",
+    "qs": "^6.5.2",
+    "redis": "^2.8.0",
+    "runkoa": "^1.5.9",
+    "soap": "^0.24.0",
+    "ws": "1.1.1"
+  },
+  "devDependencies": {
+    "@types/file-saver": "^1.3.0",
+    "babel-plugin-istanbul": "^4.1.6",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-latest": "^6.24.1",
+    "babel-register": "^6.26.0",
+    "chai": "^4.1.2",
+    "cross-env": "^5.1.4",
+    "eslint": "^4.19.1",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-plugin-import": "^2.10.0",
+    "eslint-plugin-mocha": "^5.0.0",
+    "eslint-plugin-node": "^6.0.1",
+    "eslint-plugin-promise": "^3.7.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "kcors": "^2.2.1",
+    "mocha": "^5.0.5",
+    "node-uuid": "^1.4.8",
+    "nyc": "^11.9.0",
+    "sinon": "^4.5.0"
+  },
+  "nyc": {
+    "require": [
+      "babel-register"
+    ],
+    "sourceMap": false,
+    "instrument": false,
+    "all": true
+  },
+  "standard": {
+    "env": [
+      "mocha"
+    ]
+  }
+}
