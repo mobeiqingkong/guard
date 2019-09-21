@@ -41,6 +41,7 @@ router.post('/role/find', async (ctx) => {
 
 //增加role
 router.post('/role/add', async (ctx) => {
+  console.log('增加角色接口:'+JSON.stringify(ctx.request.body))
   ctx.body = await roleController.add(ctx.request.body)
 })
 

@@ -12,7 +12,7 @@ router.post('/user/login', async (ctx) => {
 })
 //增加用户
 router.post('/user/add', async (ctx) => {
-  ctx.body = await authController.addUser(ctx.params)
+  ctx.body = await authController.addUser(ctx.request.body)
 })
 
 //删除用户
@@ -34,7 +34,7 @@ router.post('/user/find', async (ctx) => {
 
 //增加关联人
 router.post('/role/add', async (ctx) => {
-  ctx.body = await authController.addRole(ctx.params)
+  ctx.body = await authController.addRole(ctx.request.body)
 })
 
 //删除关联人
