@@ -15,9 +15,9 @@ exports.findUser = (body) => guardService.post('/user/find', body)
 exports.findRole = (body) => guardService.post('/role/find', body)
 
 //修改user
-exports.updateUser = (filter,body) => guardService.put(`/user/update`, {filter,params:body})
+exports.updateUser = (body) => guardService.put(`/user/update`, body)
 //修改role
-exports.updateRole = (filter,body) => guardService.put(`/role/update`,{filter,params:body})
+exports.updateRole = (body) => guardService.put(`/role/update`,body)
 
 //根据条件删除user
 exports.deleteUser = (body) => guardService.delete('/user/delete', body)

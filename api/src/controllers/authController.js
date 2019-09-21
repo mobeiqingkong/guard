@@ -22,13 +22,27 @@ exports.login = async (body) => {
   roles: roles
   }), 'iows:guard:')
   redis.expire(key, 86400, 'iows:guard:')
+  user.relative=roles
   return user
 }
 
+//增加用户
+exports.addUser = async (body) => {return await guardService.addUser(body)}
+//增加角色
+exports.addRole = async (body) => {return await guardService.addRole(body)}
+//删除用户
+exports.deleteUser = async (body) => {return await guardService.deleteUser(body)}
+//删除角色
+exports.deleteRole = async (body) => {return await guardService.deleteRole(body)}
+//修改用户
+exports.updateUser = async (body) => {return await guardService.updateUser(body)}
+//修改角色
+exports.updateRole = async (body) => {return await guardService.updateRole(body)}
 //查询用户
 exports.findUser = async (body) => {return await guardService.findUser(body)}
 //查询角色
 exports.findRole = async (body) => {return await guardService.findRole(body)}
+
 
 //根据id查询角色方法
 function findRoleMethod(roleId){

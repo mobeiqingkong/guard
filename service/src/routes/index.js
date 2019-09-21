@@ -7,6 +7,7 @@ const router = new Router({
 
 //用户登录
 router.post('/user/login', async (ctx) => {
+  console.log('登录请求体部是'+JSON.stringify(ctx.request.body))
   ctx.body = await userController.login(ctx.request.body)
 })
 
