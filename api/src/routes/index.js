@@ -38,8 +38,9 @@ router.post('/role/add', async (ctx) => {
 })
 
 //删除关联人
-router.delete('/role/delete', async (ctx) => {
-  ctx.body = await authController.deleteRole(ctx.request.body)
+router.delete('/role/delete/:_id', async (ctx) => {
+  console.log('删除的用户id是'+ctx.params._id)
+  ctx.body = await authController.deleteRole(ctx)
 })
 
 //修改关联人信息

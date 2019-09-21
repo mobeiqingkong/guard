@@ -20,6 +20,6 @@ exports.updateUser = (body) => guardService.put(`/user/update`, body)
 exports.updateRole = (body) => guardService.put(`/role/update`,body)
 
 //根据条件删除user
-exports.deleteUser = (body) => guardService.delete('/user/delete', body)
+exports.deleteUser = (ctx) => guardService.delete(`/user/delete/${ctx.params._id}`, ctx)
 //根据条件删除role
-exports.deleteRole = (body) => guardService.delete('/role/delete', body)
+exports.deleteRole = (ctx) => guardService.delete(`/role/delete/${ctx.params._id}`, ctx)
