@@ -17,3 +17,14 @@ coverage
 ### GIT文件 ###
 #.gitignore
  
+*.iml
+.gradle
+/app/local.properties
+/app/.idea/caches/build_file_checksums.ser
+/app/.idea/libraries
+/app/.idea/modules.xml
+/app/.idea/workspace.xml
+.DS_Store
+/app/build
+/app/captures
+.externalNativeBuild

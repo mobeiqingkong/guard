@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".fragment.UserInfoFragment">
+
+
+    <TableLayout
+        android:layout_margin="10sp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/userInfoUsernameTip"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="账户名"
+                android:gravity="center"
+                android:background="#FFF"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/userInfoUsername"
+                android:textAlignment="textEnd"
+                android:background="#FFF"
+                android:layout_weight="5"
+                android:layout_height="match_parent"
+                android:textSize="20sp"
+                android:text="测试" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <TextView
+                android:id="@+id/userInfoTelTip"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:background="#FFF"
+                android:layout_height="match_parent"
+                android:text="手机号" />
+
+            <Button
+                android:id="@+id/userInfoTel"
+                android:textAlignment="textEnd"
+                android:background="#FFF"
+                android:layout_weight="5"
+                android:layout_height="match_parent"
+                android:textSize="20sp"
+                android:text="测试" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <TextView
+                android:id="@+id/userInfoEmailTip"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:background="#FFF"
+                android:layout_height="match_parent"
+                android:text="邮箱" />
+
+            <Button
+                android:id="@+id/userInfoEmail"
+                android:textAlignment="textEnd"
+                android:background="#FFF"
+                android:layout_weight="5"
+                android:layout_height="match_parent"
+                android:textSize="20sp"
+                android:text="测试" />
+        </TableRow>
+
+    </TableLayout>
+
+    <Button
+        android:id="@+id/logout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorAccent"
+        android:textColor="#FFF"
+        android:text="退出登录" />
+
+</LinearLayout>
