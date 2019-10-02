@@ -1,6 +1,7 @@
 import Router from 'koa-router'
 import * as userController from '../controllers/userController'
 import * as roleController from '../controllers/roleController'
+const md5 = require('md5')
 const router = new Router({
   prefix: '/guard'
 })
@@ -18,6 +19,7 @@ router.post('/user/find', async (ctx) => {
 
 //增加user
 router.post('/user/add', async (ctx) => {
+  ctx.request.body.password=md5(ctx.request.body.password)
   ctx.body = await userController.add(ctx.request.body)
 })
 
