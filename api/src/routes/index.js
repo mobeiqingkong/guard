@@ -23,7 +23,11 @@ router.delete('/user/delete', async (ctx) => {
 //修改用户信息
 router.put('/user/update', async (ctx) => {
   console.log('打印到了修改User', '')
-  ctx.body = await authController.updateUser(ctx.request.body)
+
+  console.log("ctx.request.body.filter是："+ctx.request.body.filter)
+
+  console.log("ctx.request.body.params是："+ctx.request.body.params)
+  ctx.body = await authController.updateUser({"filter":JSON.parse(ctx.request.body.filter),"params":JSON.parse(ctx.request.body.params)})
 })
 
 //查询用户

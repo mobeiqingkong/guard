@@ -15,13 +15,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.OutputStream;
-import java.net.HttpURLConnection;
-import java.net.URL;
-import java.net.URLEncoder;
 import java.util.Timer;
 import java.util.TimerTask;
 public class MainActivity extends AppCompatActivity {
@@ -57,12 +50,12 @@ public class MainActivity extends AppCompatActivity {
 
             Button loginButton=findViewById(R.id.bt_login_submit);
             final EditText usernameEditText=findViewById(R.id.et_login_username);
-            final EditText upasswordEditText=findViewById(R.id.et_login_pwd);
+            final EditText passwordEditText=findViewById(R.id.et_login_pwd);
             loginButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     final String username = usernameEditText.getText().toString().trim();
-                    final String password = upasswordEditText.getText().toString().trim();
+                    final String password = passwordEditText.getText().toString().trim();
                     Log.i("登录username是", username);
                     Log.i("登录password是", password);
 
@@ -73,8 +66,11 @@ public class MainActivity extends AppCompatActivity {
                         public void run() {
                             //请求网络
                             try {
-                                Login(username,password);
-                            } catch (IOException | JSONException e) {
+
+
+                                api_tools apiTools=new api_tools();
+                                apiTools.login(MainActivity.this,username,password);
+                            } catch (Exception e) {
                                 e.printStackTrace();
                             }
                         }
@@ -106,45 +102,6 @@ public class MainActivity extends AppCompatActivity {
                 }
             });
         }
-    }
-
-    public Boolean Login(String account, String passWord) throws IOException, JSONException {
-        try {
-            String httpUrl="http://cdz.ittun.cn/cdz/user_login.php";
-            URL url = new URL(httpUrl);//创建一个URL
-            HttpURLConnection connection  = (HttpURLConnection)url.openConnection();//通过该url获得与服务器的连接
-            connection.setDoOutput(true);
-            connection.setDoInput(true);
-            connection.setRequestMethod("POST");//设置请求方式为post
-            connection.setConnectTimeout(3000);//设置超时为3秒
-            //设置传送类型
-            connection.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
-            connection.setRequestProperty("Charset", "utf-8");
-            //提交数据
-            String data = "&passwd=" + URLEncoder.encode(passWord, "UTF-8")+ "&number=" + URLEncoder.encode(account, "UTF-8")+ "&cardid=";//传递的数据
-            connection.setRequestProperty("Content-Length",String.valueOf(data.getBytes().length));
-//            ToastUtils.showShort(this,
-//                    "数据提交成功......");
-            //获取输出流
-            OutputStream os = connection.getOutputStream();
-            os.write(data.getBytes());
-            os.flush();
-            //获取响应输入流对象
-            InputStreamReader is = new InputStreamReader(connection.getInputStream());
-            BufferedReader bufferedReader = new BufferedReader(is);
-            StringBuffer strBuffer = new StringBuffer();
-            String line = null;
-            //读取服务器返回信息
-            while ((line = bufferedReader.readLine()) != null){
-                strBuffer.append(line);
-            }
-            result = strBuffer.toString();
-            is.close();
-            connection.disconnect();
-        } catch (Exception e) {
-            return true;
-        }
-        return false;
     }
 
 
