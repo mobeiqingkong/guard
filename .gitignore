@@ -1,5 +1,6 @@
 ### node ###
 */node_modules/
+*/*/node_modules/
 
 ### 编译结果文件和日志文件 ###
 */logs
