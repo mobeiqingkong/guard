@@ -167,7 +167,7 @@ exports.refreshIdToken = async (query) => {
       name: decoded.name,
       tel:decoded.tel,
       email:decoded.email,
-      expired_time:moment(new Date(new Date().getTime() + 1 * 60 * 60 * 1000)).format('YYYY-MM-DD HH:mm:ss')//刷新后expired_time增加一小时，重新生成id_token
+      expired_time:moment(new Date(new Date().getTime() + 6 * 60 * 60 * 1000)).format('YYYY-MM-DD HH:mm:ss')//刷新后expired_time增加一小时，重新生成id_token
     }
     
     console.log("payload是：",payload)

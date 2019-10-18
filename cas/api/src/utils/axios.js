@@ -47,7 +47,7 @@ const guardService = axios.create({
 	  })
 	guardService.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded;charset=UTF-8'
   	guardService.interceptors.request.use(config => {
-    var token= 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNWI5NzI3MWExZGIyNGQ1NzQxYzEyNDc3IiwibmFtZSI6IueMq-Wwj-m7kSIsInRlbCI6IjE1MTAwMDAwMDAwIiwiZW1haWwiOiIxQDkwOTAuY29tIiwiZXhwaXJlZF90aW1lIjoiMjAxOS0xMC0yMiAyMDoxMDoxNSIsImlhdCI6MTU3MTE0MTQxNX0.lljPsncNF5Juh2jl2L9a9QEnNIqul_rdKIt8b2r2L2s'
+    var token= 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjbGllbnRfaWQiOiIxMjM0NTYiLCJzZWNyZXQiOiIxMjM0NSIsImlhdCI6MTU3MTE0MTc1NX0.J7uQinrpzuAuA4sRbQkWqyaoGQYV8sXXluK83c5ZFr0'
     config.headers.common['Authorization'] = 'Bearer ' + token;
     return config;
 })
