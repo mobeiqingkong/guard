@@ -24,9 +24,9 @@ router.delete('/user/delete', async (ctx) => {
 router.put('/user/update', async (ctx) => {
   console.log('打印到了修改User', '')
 
-  console.log("ctx.request.body.filter是："+ctx.request.body.filter)
-
-  console.log("ctx.request.body.params是："+ctx.request.body.params)
+  console.log("ctx.request.body.filter是："+JSON.stringify(ctx.request.body.filter))
+  console.log("ctx.request.body.params是："+JSON.stringify(ctx.request.body.params))
+  console.log("ctx.request.body是："+JSON.stringify(ctx.request.body))
   ctx.body = await authController.updateUser({"filter":JSON.parse(ctx.request.body.filter),"params":JSON.parse(ctx.request.body.params)})
 })
 
@@ -49,7 +49,12 @@ router.delete('/role/delete/:_id', async (ctx) => {
 
 //修改关联人信息
 router.put('/role/update', async (ctx) => {
-  ctx.body = await authController.updateRole(ctx.request.body)
+  
+
+  console.log("ctx.request.body.filter是："+JSON.stringify(ctx.request.body.filter))
+  console.log("ctx.request.body.params是："+JSON.stringify(ctx.request.body.params))
+  console.log("ctx.request.body是："+JSON.stringify(ctx.request.body))
+  ctx.body = await authController.updateRole({"filter":JSON.parse(ctx.request.body.filter),"params":JSON.parse(ctx.request.body.params)})
 })
 
 //查询关联人信息

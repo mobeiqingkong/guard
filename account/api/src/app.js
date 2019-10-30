@@ -43,7 +43,7 @@ app.use(async (ctx, next) => {
 })
 
 //token验证中间件
-app.use(checkToken.checkToken())
+//app.use(checkToken.checkToken())
 
 // 日志中间件
 // app.use(logger.intercept())

@@ -18,16 +18,6 @@
             android:id="@+id/ly_retrieve_bar"
             layout="@layout/activity_main_login_navigation_bar" />
 
-        <ImageView
-            android:id="@+id/iv_login_logo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:contentDescription="@null"
-            android:paddingTop="20dp"
-            android:scaleType="centerInside"
-            app:srcCompat="@mipmap/logo" />
-
         <LinearLayout
             android:id="@+id/ll_login_username"
             android:layout_width="match_parent"
@@ -230,13 +220,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
-
-        <View
-            android:id="@+id/ll_login_layer"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:alpha="0"
-            android:background="@color/black_alpha_128" />
 
         <LinearLayout
             android:id="@+id/ll_login_pull"
