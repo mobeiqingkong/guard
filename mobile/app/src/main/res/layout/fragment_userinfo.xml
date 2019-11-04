@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TableLayout
+        android:id="@+id/tableLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10sp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/userInfoUsernameTip"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#FFF"
+                android:gravity="center"
+                android:text="账户名"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/userInfoUsername"
+                android:layout_height="match_parent"
+                android:layout_weight="5"
+                android:background="#FFF"
+
+                android:tag="username"
+                android:text="测试"
+                android:textAlignment="textEnd"
+                android:textSize="20sp" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/userInfoNameTip"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#FFF"
+                android:gravity="center"
+                android:text="姓名"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/userInfoName"
+                android:layout_height="match_parent"
+                android:layout_weight="5"
+                android:background="#FFF"
+                android:tag="name"
+                android:text="测试"
+                android:textAlignment="textEnd"
+                android:textSize="20sp" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/userInfoTelTip"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#FFF"
+                android:gravity="center"
+                android:text="手机号"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/userInfoTel"
+                android:layout_height="match_parent"
+                android:layout_weight="5"
+                android:background="#FFF"
+                android:text="测试"
+                android:tag="tel"
+                android:textAlignment="textEnd"
+                android:textSize="20sp" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/userInfoEmailTip"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#FFF"
+                android:gravity="center"
+                android:text="邮箱"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/userInfoEmail"
+                android:layout_height="match_parent"
+                android:layout_weight="5"
+                android:background="#FFF"
+                android:tag="email"
+                android:text="测试"
+                android:textAlignment="textEnd"
+                android:textSize="20sp" />
+        </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/userInfoRelativeTip1"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#FFF"
+            android:gravity="center"
+            android:text="紧急联系人1"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/userInfoRelative1"
+            android:layout_height="match_parent"
+            android:layout_weight="5"
+            android:background="#FFF"
+            android:tag="Relative1"
+            android:text="测试"
+            android:textAlignment="textEnd"
+            android:textSize="20sp" />
+    </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/userInfoRelativeTelTip1"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#FFF"
+                android:gravity="center"
+                android:text="紧急联系人电话号码1"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/userInfoRelativeTel1"
+                android:layout_height="match_parent"
+                android:layout_weight="5"
+                android:background="#FFF"
+                android:tag="Relative1Tel"
+                android:text="13200000001"
+                android:textAlignment="textEnd"
+                android:textSize="20sp" />
+        </TableRow>
+<TableRow
+android:layout_width="match_parent"
+android:layout_height="match_parent">
+
+<TextView
+    android:id="@+id/userInfoRelativeTip2"
+    android:layout_height="match_parent"
+    android:layout_weight="1"
+    android:background="#FFF"
+    android:gravity="center"
+    android:text="紧急联系人2"
+    android:textSize="20sp" />
+
+<EditText
+    android:id="@+id/userInfoRelative2"
+    android:layout_height="match_parent"
+    android:layout_weight="5"
+    android:background="#FFF"
+    android:tag="Relative2"
+    android:text="测试"
+    android:textAlignment="textEnd"
+    android:textSize="20sp" />
+</TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/userInfoRelativeTelTip2"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#FFF"
+                android:gravity="center"
+                android:text="紧急联系人电话号码2"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/userInfoRelativeTel2"
+                android:layout_height="match_parent"
+                android:layout_weight="5"
+                android:background="#FFF"
+                android:tag="Relative2Tel"
+                android:text="13200000002"
+                android:textAlignment="textEnd"
+                android:textSize="20sp" />
+        </TableRow>
+    </TableLayout>
+    <Button
+        android:id="@+id/userInfoUpdateBT"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:text="确定修改"
+        android:textColor="#FFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tableLayout" />
+
+    <Button
+        android:id="@+id/logout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:background="@color/colorAccent"
+        android:text="退出登录"
+        android:textColor="#FFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/userInfoUpdateBT" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
