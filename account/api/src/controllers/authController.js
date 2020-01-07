@@ -27,7 +27,10 @@ exports.login = async (body) => {
 }
 
 //增加用户
-exports.addUser = async (body) => {return await guardService.addUser(body)}
+exports.addUser = async (body) => {
+  console.log("打印到增加用户,body是"+JSON.stringify(body))
+  return await guardService.addUser(body)
+}
 //增加角色
 exports.addRole = async (body) => {return await guardService.addRole(body)}
 //删除用户
@@ -43,8 +46,21 @@ exports.findUser = async (body) => {return await guardService.findUser(body)}
 //查询角色
 exports.findRole = async (body) => {return await guardService.findRole(body)}
 
+//注册管理员
+exports.enrollAdmin = async (body) => {return await guardService.enrollAdmin(body)}
+//注册普通用户
+exports.registerUser = async (body) => {return await guardService.registerUser(body)}
+//查询账本
+exports.query = async (body) => {return await guardService.query(body)}
+//更新账本
+exports.invoke = async (body) => {return await guardService.invoke(body)}
+
+
+
+
 
 //根据id查询角色方法
 function findRoleMethod(roleId){
   return guardService.findRole({"_id":roleId})
 }
+

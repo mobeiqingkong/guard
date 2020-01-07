@@ -1,6 +1,7 @@
 import Router from 'koa-router'
 import * as userController from '../controllers/userController'
 import * as roleController from '../controllers/roleController'
+import * as ledgeController from '../controllers/ledgeController'
 const md5 = require('md5')
 const router = new Router({
   prefix: '/guard'
@@ -57,4 +58,27 @@ router.delete('/role/delete/:_id', async (ctx) => {
   ctx.body = await roleController.delete(ctx.params)
 })
 
+
+
+
+
+//查询账本
+router.post('/ledget/query', async (ctx) => {
+  ctx.body = await ledgeController.query(ctx.request.body)
+})
+
+//增加账本
+router.post('/ledget/invoke', async (ctx) => {
+  ctx.body = await ledgeController.invoke(ctx.request.body)
+})
+
+//注册普通用户
+router.post('/ledget/registerUser', async (ctx) => {
+  ctx.body = await ledgeController.registerUser(ctx.request.body)
+})
+
+//注册管理员
+router.post('/ledget/enrollAdmin', async (ctx) => {
+  ctx.body = await ledgeController.enrollAdmin(ctx.request.body)
+})
 export default router

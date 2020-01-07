@@ -1,9 +1,6 @@
 import assert from 'assert'
 import moment from 'moment'
 const dbHelper = require('../dbhelper/dbHelper')
-const registerUserCB=require('../dbhelper/registerUser')
-const enrollAdminCB=require('../dbhelper/enrollAdmin')
-const queryCB=require('../dbhelper/query')
 
 const md5 = require('md5')
 const model = 'user'
@@ -16,13 +13,8 @@ exports.findOne = async (params) => {
 //增加一条user数据
 exports.add = async (params) => {
   params.created_time = moment(new Date()).format('YYYY-MM-DD HH:mm:ss')
-  if(params.tools=='registerUser'){
-    return await registerUserCB.registerMain(params.userCustom,params.adminCustom,params.affiliationCustom,params.enrollmentIDCustom,params.roleCustom)
-  }else if(params.tools='enrollAdmin'){
-    return await enrollAdminCB.enrollAdminMain(certificateAuthoritiesCustom,adminCustom,enrollmentIDCustom,enrollmentSecretCustom) 
-  }else if(params.tools='query')
+  return await dbHelper.add(model, params)
 
-    return await dbHelper.add(model, params)
 }
   
 //修改一条user数据

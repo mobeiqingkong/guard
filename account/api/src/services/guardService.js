@@ -23,3 +23,12 @@ exports.updateRole = (body) => guardService.put(`/role/update`,body)
 exports.deleteUser = (ctx) => guardService.delete(`/user/delete/${ctx.params._id}`, ctx)
 //根据条件删除role
 exports.deleteRole = (ctx) => guardService.delete(`/role/delete/${ctx.params._id}`, ctx)
+
+//注册管理员admin
+exports.enrollAdmin = (body) => guardService.post('/ledget/enrollAdmin', body)
+//注册普通用户
+exports.registerUser = (body) => guardService.post('/ledget/registerUser', body)
+//查询账本
+exports.query = (body) => guardService.post('/ledget/query', body)
+//更新账本
+exports.invoke = (body) => guardService.post('/ledget/invoke', body)

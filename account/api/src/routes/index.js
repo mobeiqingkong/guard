@@ -49,16 +49,35 @@ router.delete('/role/delete/:_id', async (ctx) => {
 
 //修改关联人信息
 router.put('/role/update', async (ctx) => {
-  
-
   console.log("ctx.request.body.filter是："+JSON.stringify(ctx.request.body.filter))
   console.log("ctx.request.body.params是："+JSON.stringify(ctx.request.body.params))
   console.log("ctx.request.body是："+JSON.stringify(ctx.request.body))
   ctx.body = await authController.updateRole({"filter":JSON.parse(ctx.request.body.filter),"params":JSON.parse(ctx.request.body.params)})
 })
-
 //查询关联人信息
 router.post('/role/find', async (ctx) => {
   ctx.body = await authController.findRole(ctx.request.body)
 })
+
+
+//查询账本
+router.post('/ledget/query', async (ctx) => {
+  ctx.body = await authController.query(ctx.request.body)
+})
+
+//增加账本
+router.post('/ledget/invoke', async (ctx) => {
+  ctx.body = await authController.invoke(ctx.request.body)
+})
+
+//注册普通用户
+router.post('/ledget/registerUser', async (ctx) => {
+  ctx.body = await authController.registerUser(ctx.request.body)
+})
+
+//注册管理员
+router.post('/ledget/enrollAdmin', async (ctx) => {
+  ctx.body = await authController.enrollAdmin(ctx.request.body)
+})
+
 export default router
