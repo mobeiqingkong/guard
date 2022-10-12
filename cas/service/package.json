@@ -25,7 +25,7 @@
     "nodemon": "^1.17.3",
     "qs": "^6.5.2",
     "runkoa": "^1.5.9",
-    "soap": "^0.24.0"
+    "soap": "^0.45.0"
   },
   "devDependencies": {
     "babel-plugin-istanbul": "^4.1.6",
